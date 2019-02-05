@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load widget_tweaks %}
+
 {% block title %}
   Create a new topic in {{ board.name }}
 {% endblock %}
@@ -11,9 +13,10 @@
 {% endblock %}
 
 {% block content %}
-<form method="post">
+<form method="post" novalidate>
   {% csrf_token %}
-  {{ form.as_p }}
+  {% include 'includes/form.html' %}
   <button type="submit" class="btn btn-success">Post</button>
 </form>
+
 {% endblock %}
