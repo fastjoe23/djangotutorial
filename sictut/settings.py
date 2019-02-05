@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 # own apps
     'boards',
+    'accounts',
 ]
 
 MIDDLEWARE = [
