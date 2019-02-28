@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load humanize %}
+
 {% block title %}
   Topics of {{ board.name }}
 {% endblock %}
@@ -37,9 +39,12 @@
         {% endif %}
       </td>
       <td>{{ topic.views }}</td>
-      <td>{{ topic.last_updated }}</td>
+      <td>{{ topic.last_updated|naturaltime }}</td>
       </tr>
     {% endfor %}
   </tbody>
 </table>
+
+{% include 'includes/pagination.html' %}
+
 {% endblock %}
