@@ -30,6 +30,8 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/reply$', views.reply_topic, name='reply_topic'),
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
         views.PostUpdateView.as_view(), name='edit_post'),
+     url(r'^settings/account/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+
 # Password Reseting URLs
     url(r'^reset/$', auth_views.PasswordResetView.as_view(
         template_name='password_reset.html',
